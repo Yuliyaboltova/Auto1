@@ -1,0 +1,66 @@
+.picture{
+margin-bottom: 50px;
+position: relative; 
+height: 500px;
+z-index: -1;
+}
+
+.main-picture-container{
+
+
+}
+
+.main-picture-img img {
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	width: 100%;
+
+
+
+}
+
+
+.main-picture-text{
+position: absolute;
+top: 50%;  
+left: 20%;
+right: 20%;
+color:#fff;
+
+}
+
+
+.main-picture-container-text{
+min-width: 280px;
+margin: 0 auto;
+width: 50%;
+text-align: center;
+
+}
+
+
+.main-picture-container-text h1{
+	font-size: 40px;
+
+}
+.main-picture-container-text h3 span {
+  font-size: 26px; 
+}
+
+
+
+@media (max-width: 750px) {
+
+.main-picture-container-text h3 span{
+	font-size: 21px;
+	
+}
+
+.main-picture-container-text h1{
+	font-size: 30px;
+	font-weight: 600px;
+
+}
+
+}

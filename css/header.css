@@ -1,0 +1,364 @@
+:root {
+  --font-text1: "Manrope", serif;
+  --font-text2: "Raleway", serif;
+  --grey: #9f9f9f;
+  --color-line: #262626;
+  --text-color: #fff;
+  --bg-color: #000;
+  /* --bg-color: #1a1d25; */
+  --gradient-color: rgba(#ffffff00);
+  --font-text3: Bookman Old Style Cyr, serif;
+  --color-blue: #e2e8ef;
+  --foorer-color-icon: #bbb;
+  --icon-grey: #999;
+}
+
+body,
+::after,
+::before,
+img,
+span {
+  box-sizing: border-box;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+p,
+div,
+img,
+h1,
+h2,
+h3,
+a,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--text-color);
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-text2);
+  font-size: 12px;
+  color: var(--font-text);
+}
+
+/* body._lock {
+  overflow: hidden;
+} */
+
+/*-------HEADER------------ */
+.header {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #1a1a1f;
+	
+}
+
+.header-container {
+  width: 80%; /* max-width: 1680px; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  height: 70px;
+}
+
+.header-logo {
+  width: auto;
+  padding-right: 20px;
+}
+
+/*------НАВИГАЦИЯ--------- */
+.menu-body {
+  white-space: nowrap;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 400;
+  text-transform: uppercase; /*Заглавные все */
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0 24px 0 0;
+}
+
+/*------ТЕЛЕФОН --------- */
+.header-nav-mobile {
+  display: flex;
+  margin-left: auto;
+}
+.nav-small-text {
+  color: var(--text-color);
+}
+.nav-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.nav-icon-img a svg {
+  width: 29px;
+  height: 29px;
+  fill: var(--text-color);
+  padding-right: 5px;
+  
+}
+.menu-arrow {
+  display: none;
+}
+
+/*----BURGER MENU-----------**/
+.menu-list > li {
+  position: relative;
+  margin: 0px 0px 0px 20px;
+}
+
+.menu-list li:hover {
+  border-bottom: 2px solid #fff;
+}
+/* .menu-sub-list li:hover {
+  border-bottom: 1.5px solid #fff;
+} */
+.menu-sub-list {
+	position: absolute;
+  top: 100%;
+  left: 0;
+	background: #1A1A1F;
+  padding: 20px ;
+  /* min-width: 250px; */
+}
+.menu-sub-link a {
+  color: #fff;
+}
+.menu-sub-list li {
+  margin: 0 0 10px 0;
+}
+
+/* .menu-sub-list li:last-child {
+  margin: 0;
+} */
+
+/*- Mобилка и ПК*/
+body._pc .menu-list > li:hover .menu-sub-list {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translate(0px, 0px); 
+
+}
+
+body._touch .menu-list > li {
+  display: flex;
+  align-items: center;
+	font-size: 14px;
+	
+}
+
+body._touch .menu-link a {
+  flex: 1 1 auto; /*на всю ширину*/
+  text-align: left;
+}
+
+body._touch .menu-sub-link a {
+  padding-top: 10px;
+	font-size: 14px;
+}
+
+body._touch .menu-arrow {
+  /*стрелка*/
+  transition: transform 0.3s ease 0s; /*анимация стрелки*/
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0px 0px 0px 7px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #fff;
+	
+}
+
+body._touch .menu-list > li._active .menu-sub-list {
+  visibility: visible;
+  pointer-events: all;
+  transform: translate(0px, 0px);
+}
+
+body._touch .menu-list > li._active .menu-arrow {
+  transform: rotate(-180deg);
+}
+
+body._touch .menu-list > li:hover {
+  border-bottom: none;
+}
+
+/*----MEDIA--------МОБИЛКА------------------------*/
+
+@media (min-width: 900px) {
+  .menu-list {
+    display: flex;
+    align-items: center;
+  }
+  .menu-list > li {
+    padding: 25px 0;
+  }
+  .menu-sub-list {
+    transform: translate(0px, 10px);
+    opacity: 1;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header-container {
+    width: 95%;
+  }
+
+  .menu-link {
+    font-size: 14px;
+  }
+  .menu-list > li {
+    position: relative;
+    margin: 0px 0px 0px 10px;
+  }
+}
+
+@media (max-width: 936px) {
+  .header-nav-mobile {
+    flex-grow: 0;
+  }
+  .menu-icon {
+    z-index: 6;
+    display: block;
+    position: relative;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .menu-icon::after,
+  .menu-icon::before,
+  .menu-icon span {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #fff;
+  }
+
+  .menu-icon::after,
+  .menu-icon::before {
+    content: "";
+  }
+
+  .menu-icon::before {
+    top: 0;
+  }
+  .menu-icon::after {
+    bottom: 0;
+  }
+  .menu-icon span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+  .menu-icon._active span {
+    transform: scale(0) translate(0px, -50%); /* убрали полоску пр середине*/
+  }
+  .menu-icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%); /* палочку опустили*/
+  }
+
+  .menu-icon._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+
+  .menu-body {
+    overflow: auto;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /* transform: translate(-100%, 0px); */
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    padding: 100px 30px 30px 30px;
+    transition: left 0.3s ease 0s;
+  }
+
+  .menu-body._active {
+    /* transform: translate(0px, 0px); */
+    left: 0;
+  }
+  .menu-list > li {
+    flex-wrap: wrap;
+    margin: 0 0 30px 0;
+  }
+  .menu-list > li:last-child {
+    margin-bottom: 0;
+  }
+  .menu-list > ._active .menu-sub-list {
+    display: block;
+  }
+
+  .menu-link {
+    font-size: 24px;
+  }
+  .menu-sub-list {
+    position: relative;
+    background: #444;
+    color: #fff;
+    flex: 1 1 100%;
+    display: none;
+  }
+  .menu-sub-link {
+    font-size: 20px;
+  }
+  .menu-sub-link a {
+    color: #fff;
+  }
+}
+
+@media (max-width: 568px) {
+  .nav-text {
+    display: none;
+  }
+}
+
+/* 
+.menu-body::after{ ПЛФШКА ВВЕРХУ
+content: "";
+position: fixed;
+width: 100%;
+height: 20%;
+background-color: #444;
+left: 0;
+bottom: 0;
+}  */
+
+/* .menu-body::before{ /ПЛАШКА СНИЗУ В МЕРЮ
+content: "";
+position: fixed;
+width: 100%;
+height: 70px;
+background-color: #fff;
+left: 0;
+top:  0;
+z-index: 11;
+} */
